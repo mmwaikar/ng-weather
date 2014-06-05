@@ -1,19 +1,23 @@
 'use strict';
 
-angular
-  .module('weatherappApp', [
+var app = angular.module('weatherappApp', [
     'ngCookies',
     'ngResource',
     'ngSanitize',
     'ngRoute'
-  ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+  ]);
+
+app.config(function ($routeProvider) {
+  $routeProvider
+    .when('/', {
+      templateUrl: 'views/main.html',
+      controller: 'MainCtrl'
+    })
+    .when('/weather', {
+      templateUrl: 'views/weather.html',
+      controller: 'WeatherCtrl'
+    })
+    .otherwise({
+      redirectTo: '/'
+    });
+});

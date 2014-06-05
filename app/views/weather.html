@@ -1,0 +1,30 @@
+<form id="weatherForm" ng-controller="WeatherCtrl">
+
+  <!-- for input -->
+  <div class="panel panel-info">
+    <!-- panel-heading -->
+    <div class="panel-heading">
+      <h3 class="panel-title">
+        This application shows weather for user-selected cities.
+      </h3>
+    </div>
+
+    <!-- panel-body -->
+    <div class="panel-body">
+      <label for="citiesText" class="label label-default">Please enter semi-colon separated city names</label>
+      <p />
+      <div class="input-group">
+        <input id="citiesText" type="text" class="form-control" placeholder="Semi-colon separated city names" ng-model="delimiterSeparatedCities" />
+        <label ng-model="delimiterSeparatedCities"></label>
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button" ng-click="getWeather()">Go!</button>
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- for output -->
+  <div class="panel panel-default">
+    <div ac-chart="line" ac-config="chartConfig" ac-data="weatherData" class="chart"></div>
+  </div>
+</form>
