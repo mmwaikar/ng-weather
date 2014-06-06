@@ -23,53 +23,47 @@
   </div>
 
   <!-- for output -->
-  <!--
-  <div ng-repeat="item in data.weatherData.list">
-    <div>
-      <span class="glyphicon glyphicon-tree-deciduous">data.weatherData.city.name, data.weatherData.country</span>
-    </div>
-  </div>
--->
+  <div ng-repeat="weatherData in data.weathers">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <span class="glyphicon glyphicon-tree-deciduous">{{weatherData.city.name}}, {{weatherData.city.country}}</span>
+      </div>
 
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <span class="glyphicon glyphicon-tree-deciduous">{{data.weatherData.city.name}}, {{data.weatherData.city.country}}</span>
+      <div class="panel-body">
+        <p>Here's the weather data for {{weatherData.city.name}}</p>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th rowspan="2" style="text-align:center;">Date</th>
+            <th colspan="2" style="text-align:center;">Weather</th>
+            <th colspan="6" style="text-align:center;">Temperature</th>
+          </tr>
+          <tr>
+            <th>Main</th>
+            <th>Description</th>
+            <th>Day</th>
+            <th>Min</th>
+            <th>Max</th>
+            <th>Mor.</th>
+            <th>Eve.</th>
+            <th>Night</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="item in weatherData.list">
+            <td>{{item.dt}}</td>
+            <td>{{item.weather[0].main}}</td>
+            <td>{{item.weather[0].description}}</td>
+            <td>{{item.temp.day}}</td>
+            <td>{{item.temp.min}}</td>
+            <td>{{item.temp.max}}</td>
+            <td>{{item.temp.morn}}</td>
+            <td>{{item.temp.eve}}</td>
+            <td>{{item.temp.night}}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-
-    <div class="panel-body">
-      <p>Here's the weather data for {{data.weatherData.city.name}}</p>
-    </div>
-    <table class="table">
-      <thead>
-        <tr>
-          <th rowspan="2" style="text-align:center;">Date</th>
-          <th colspan="2" style="text-align:center;">Weather</th>
-          <th colspan="6" style="text-align:center;">Temperature</th>
-        </tr>
-        <tr>
-          <th>Main</th>
-          <th>Description</th>
-          <th>Day</th>
-          <th>Min</th>
-          <th>Max</th>
-          <th>Mor.</th>
-          <th>Eve.</th>
-          <th>Night</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr ng-repeat="item in data.weatherData.list">
-          <td>{{item.dt | date:'dd-MMM-yyyy'}}</td>
-          <td>{{item.weather[0].main}}</td>
-          <td>{{item.weather[0].description}}</td>
-          <td>{{item.temp.day}}</td>
-          <td>{{item.temp.min}}</td>
-          <td>{{item.temp.max}}</td>
-          <td>{{item.temp.morn}}</td>
-          <td>{{item.temp.eve}}</td>
-          <td>{{item.temp.night}}</td>
-        </tr>
-      </tbody>
-    </table>
   </div>
 </form>
