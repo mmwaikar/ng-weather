@@ -1,11 +1,11 @@
 'use strict';
 
 var app = angular.module('weatherappApp', [
-    'ngCookies',
-    'ngResource',
-    'ngSanitize',
-    'ngRoute'
-  ]);
+  'ngCookies',
+  'ngResource',
+  'ngSanitize',
+  'ngRoute'
+]);
 
 app.config(function ($routeProvider) {
   $routeProvider
@@ -15,7 +15,8 @@ app.config(function ($routeProvider) {
     })
     .when('/weather', {
       templateUrl: 'views/weather.html',
-      controller: 'WeatherCtrl'
+      controller: 'WeatherCtrl',
+      controllerAs: 'ctrl'
     })
     .otherwise({
       redirectTo: '/'
