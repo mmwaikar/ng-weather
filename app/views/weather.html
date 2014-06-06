@@ -14,17 +14,31 @@
       <label for="citiesText" class="label label-default">Please enter semi-colon separated city names</label>
       <p />
       <div class="input-group">
-        <input id="citiesText" type="text" class="form-control" placeholder="Semi-colon separated city names" ng-model="data.delimiterSeparatedCities" />
+        <input id="citiesText" type="text" class="form-control" placeholder="Semi-colon separated city names" ng-model="data.delimiterSeparatedCities" required />
         <span class="input-group-btn">
-          <button class="btn btn-default" type="button" ng-click="getWeather()">Go!</button>
+          <button class="btn btn-default" type="button" ng-click="getWeather()" ng-disabled="!isModelValid()">Go!</button>
         </span>
       </div>
     </div>
   </div>
 
+  <!-- for errors -->
+  <div class="panel panel-danger" ng-show="data.isError">
+    <div class="panel-heading">
+      <span>Errors</span>
+    </div>
+    <div class="panel-body">
+      <ul>
+        <li ng-repeat="error in data.errors">
+          {{error}}
+        </li>
+      </ul>
+    </div>
+  </div>
+
   <!-- for output -->
   <div ng-repeat="weatherData in data.weathers">
-    <div class="panel panel-default">
+    <div class="panel panel-success">
       <div class="panel-heading">
         <span class="glyphicon glyphicon-tree-deciduous">{{weatherData.city.name}}, {{weatherData.city.country}}</span>
       </div>
