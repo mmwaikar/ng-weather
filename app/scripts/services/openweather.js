@@ -10,7 +10,7 @@ app.factory('openWeather', function ($http) {
       }
     }).success(function (data) {
       if (data.cod === "404") {
-        errorCallback(data);
+        errorCallback("Could not find data for city " + city + ". Please check the spelling of the city you are trying to search.");
       } else {
         callback(data);
       }

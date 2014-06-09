@@ -1,4 +1,4 @@
-<form id="weatherForm" ng-controller="WeatherCtrl as ctrl">
+<form id="weatherForm" ng-controller="WeatherCtrl">
 
   <!-- for input -->
   <div class="panel panel-info">
@@ -16,7 +16,7 @@
       <div class="input-group">
         <input id="citiesText" type="text" class="form-control" placeholder="Semi-colon separated city names" ng-model="data.delimiterSeparatedCities" required />
         <span class="input-group-btn">
-          <button class="btn btn-default" type="button" ng-click="getWeather()" ng-disabled="!isModelValid()">Go!</button>
+          <button class="btn btn-success" type="button" ng-click="getWeather()" ng-disabled="!isModelValid()">Go!</button>
         </span>
       </div>
     </div>
@@ -66,6 +66,7 @@
         </thead>
         <tbody>
           <tr ng-repeat="item in weatherData.list">
+            <!--<td>{{item.dt | date:'dd-MMM-yyyy' }}</td>-->
             <td>{{item.dt}}</td>
             <td>{{item.weather[0].main}}</td>
             <td>{{item.weather[0].description}}</td>

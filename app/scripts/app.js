@@ -15,8 +15,7 @@ app.config(function ($routeProvider) {
     })
     .when('/weather', {
       templateUrl: 'views/weather.html',
-      controller: 'WeatherCtrl',
-      controllerAs: 'ctrl'
+      controller: 'WeatherCtrl'
     })
     .otherwise({
       redirectTo: '/'
