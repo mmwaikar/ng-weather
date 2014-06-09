@@ -18,8 +18,7 @@ This application shows weather using the OpenWeatherMap API. AngularJS is the fr
 
 4. [Underscore](http://underscorejs.org/) provides functional programming paradigms to be used directly from any Javascript code-base. Underscore is used from the *WeatherCtrl* controller.
 
-5. WeatherCtrl controller interacts with the weather.html page. which can be navigated from -
-http://127.0.0.1:24910/app/index.html#/weather
+5. WeatherCtrl controller interacts with the weather.html page.
 
 ###Instructions for running the application
 Please clone the above git repo and switch to develop branch. Once you are in the root directory, run grunt server which opens http://127.0.0.1:9000/#/ as the main page. Then navigate to the http://127.0.0.1:9000/#/weather page which shows the weather for the cities entered by the user in the text box. The Go button remains disabled until the user enters some name (i.e. until it remains empty).
