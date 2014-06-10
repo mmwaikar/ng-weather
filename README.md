@@ -21,7 +21,22 @@ This application shows weather using the OpenWeatherMap API. AngularJS is the fr
 5. WeatherCtrl controller interacts with the weather.html page.
 
 ###Instructions for running the application
-Please clone the above git repo and switch to develop branch. Once you are in the root directory, run grunt server which opens http://127.0.0.1:9000/#/ as the main page. Then navigate to the http://127.0.0.1:9000/#/weather page which shows the weather for the cities entered by the user in the text box. The Go button remains disabled until the user enters some name (i.e. until it remains empty).
+Please clone the above git repo - 
+```
+git clone https://github.com/mmwaikar/ng-weather.git
+```
+and switch to develop branch -
+```
+git checkout develop
+```
+The remaining steps below assume that [Node.js](http://nodejs.org/), [NPM](https://www.npmjs.org/) and [Yeoman](http://yeoman.io/) are already installed.
+
+Once you are in the root directory (ng-weather), run -
+
+	- npm update which installs the dependent node packages from /package.json file in /node_modules folder
+	- bower install which installs the bower dependencies from /bower.json file in /app/bower_components folder
+
+Now run grunt serve which opens http://127.0.0.1:9000/#/ as the main page. Then navigate to the http://127.0.0.1:9000/#/weather page which will fetch the weather for the cities entered by the user in the text box. The Go button remains disabled until the user enters some name (i.e. until it remains empty).
 
   - Errors, if any, are shown in a separate panel
   - Weather data is shown in its own panel, which has a table for showing the min., max and other temperatures.
